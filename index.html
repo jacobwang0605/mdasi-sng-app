@@ -6,35 +6,45 @@
   <title>台大癌醫 麻醉部｜疼痛評估系統</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    body { font-family: sans-serif; background: #f9fcff; padding: 2rem; color: #333; }
-    h1 { color: #0072C6; }
-    .section { margin-bottom: 2rem; }
-    label { display: block; margin: 1rem 0 0.5rem; }
+    body { font-family: sans-serif; background: #f0f8ff; padding: 2rem; }
+    header { font-size: 1.2rem; font-weight: bold; margin-bottom: 1rem; }
+    section { margin-bottom: 2rem; }
+    label { display: block; margin: 0.5rem 0; }
     input, select { padding: 0.5rem; width: 100%; max-width: 400px; }
     input[type="range"] { width: 100%; }
-    header { font-weight: bold; font-size: 1.1rem; margin-bottom: 1rem; }
   </style>
 </head>
 <body>
   <header>
-    <img src="logo.png" alt="logo" height="40" style="vertical-align:middle;margin-right:8px;">
+    <img src="logo.png" alt="Logo" style="height: 40px; vertical-align: middle; margin-right: 8px;">
     台大癌醫 麻醉部｜疼痛評估系統
   </header>
 
-  <h1>基本資料</h1>
-  <div class="section">
-    <label>姓名 <input type="text" /></label>
-    <label>病歷號碼 <input type="text" /></label>
+  <section>
+    <h2>基本資料</h2>
+    <label>姓名 <input type="text"></label>
+    <label>病歷號碼 <input type="text"></label>
     <label>性別 <select><option>男</option><option>女</option></select></label>
-    <label>生日 <input type="date" /></label>
-    <label>填表日期 <input type="date" value="2025-04-22" /></label>
-  </div>
+    <label>生日 <input type="date"></label>
+    <label>填表日期 <input type="date" value="2025-04-22"></label>
+  </section>
 
-  <h1>MDASI（範例）</h1>
-  <div class="section">
-    <label>疼痛程度 <input type="range" min="0" max="10" value="0" oninput="out.value=this.value"><output id="out">0</output></label>
-  </div>
+  <section>
+    <h2>MDASI（部分項目）</h2>
+    <label>1. 疼痛 <input type="range" min="0" max="10" value="0" oninput="m1.value=this.value"><output id="m1">0</output></label>
+    <label>2. 疲倦 <input type="range" min="0" max="10" value="0" oninput="m2.value=this.value"><output id="m2">0</output></label>
+    <label>3. 呼吸困難 <input type="range" min="0" max="10" value="0" oninput="m3.value=this.value"><output id="m3">0</output></label>
+  </section>
 
-  <p>（完整版本功能整合中...）</p>
+  <section>
+    <h2>Sng Pain Mapping（治療前）</h2>
+    <label>現在痛 <input type="number" min="0" max="10"></label>
+    <label>現在痠 <input type="number" min="0" max="10"></label>
+    <label>現在麻 <input type="number" min="0" max="10"></label>
+    <label>最痛 <input type="number" min="0" max="10"></label>
+    <label>嗎啡是否有效 <select><option>1 無</option><option>2 有</option></select></label>
+  </section>
+
+  <p>PDF 與 Excel 匯出功能整合中，敬請期待。</p>
 </body>
 </html>
