@@ -1,14 +1,40 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
   <meta charset="UTF-8">
-  <title>MDASI + Sng Pain Mapping</title>
+  <title>MDASI 評估工具</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <style>
+    body { font-family: sans-serif; background: #f2f9ff; padding: 2rem; color: #333; }
+    h1 { color: #0077cc; }
+    section { margin-bottom: 2rem; }
+    label { display: block; margin: 1rem 0 0.5rem; }
+    input, select { padding: 0.5rem; width: 100%; max-width: 400px; }
+    input[type="range"] { width: 100%; }
+  </style>
 </head>
 <body>
-  <h1>MDASI + Sng Pain Mapping Demo</h1>
-  <p>這是前端測試版本，你可以開始加入內容！</p>
+  <h1>MDASI 評估工具（新版部署確認）</h1>
+  <section>
+    <h2>基本資料</h2>
+    <label>姓名 <input type="text" /></label>
+    <label>病歷號 <input type="text" /></label>
+    <label>性別
+      <select>
+        <option>男</option>
+        <option>女</option>
+      </select>
+    </label>
+    <label>生日 <input type="date" /></label>
+    <label>填表日期 <input type="date" value="2025-04-22" /></label>
+  </section>
+
+  <section>
+    <h2>MDASI 問題（部分展示）</h2>
+    <label>1. 疼痛 <input type="range" min="0" max="10" value="0" oninput="p1.value=this.value"><output id="p1">0</output></label>
+    <label>2. 疲倦 <input type="range" min="0" max="10" value="0" oninput="p2.value=this.value"><output id="p2">0</output></label>
+    <label>3. 呼吸困難 <input type="range" min="0" max="10" value="0" oninput="p3.value=this.value"><output id="p3">0</output></label>
+  </section>
 </body>
 </html>
