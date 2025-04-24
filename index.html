@@ -3,7 +3,7 @@
 <html lang="zh">
 <head>
   <meta charset="UTF-8">
-  <title>台大癌醫 麻醉部｜疼痛評估系統</title>
+  <title>台大癌醫 麻醉部｜疼痛評估系統（測試版）</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body { font-family: sans-serif; background: #f0f8ff; padding: 2rem; }
@@ -12,12 +12,15 @@
     label { display: block; margin: 0.5rem 0; }
     input, select { padding: 0.5rem; width: 100%; max-width: 400px; }
     input[type="range"] { width: 100%; }
+    table { border-collapse: collapse; width: 100%; max-width: 500px; }
+    table, th, td { border: 1px solid #999; }
+    th, td { padding: 0.5rem; text-align: center; }
   </style>
 </head>
 <body>
   <header>
     <img src="logo.png" alt="Logo" style="height: 40px; vertical-align: middle; margin-right: 8px;">
-    台大癌醫 麻醉部｜疼痛評估系統
+    台大癌醫 麻醉部｜疼痛評估系統（測試版）
   </header>
 
   <section>
@@ -26,25 +29,46 @@
     <label>病歷號碼 <input type="text"></label>
     <label>性別 <select><option>男</option><option>女</option></select></label>
     <label>生日 <input type="date"></label>
-    <label>填表日期 <input type="date" value="2025-04-22"></label>
+    <label>填表日期 <input type="date" value="2025-04-24"></label>
   </section>
 
   <section>
-    <h2>MDASI（部分項目）</h2>
+    <h2>MDASI（前3題展示）</h2>
     <label>1. 疼痛 <input type="range" min="0" max="10" value="0" oninput="m1.value=this.value"><output id="m1">0</output></label>
     <label>2. 疲倦 <input type="range" min="0" max="10" value="0" oninput="m2.value=this.value"><output id="m2">0</output></label>
     <label>3. 呼吸困難 <input type="range" min="0" max="10" value="0" oninput="m3.value=this.value"><output id="m3">0</output></label>
   </section>
 
   <section>
-    <h2>Sng Pain Mapping（治療前）</h2>
-    <label>現在痛 <input type="number" min="0" max="10"></label>
-    <label>現在痠 <input type="number" min="0" max="10"></label>
-    <label>現在麻 <input type="number" min="0" max="10"></label>
-    <label>最痛 <input type="number" min="0" max="10"></label>
-    <label>嗎啡是否有效 <select><option>1 無</option><option>2 有</option></select></label>
-  </section>
+    <h2>SNG Pain Mapping（治療前）</h2>
+    <table>
+      <tr><th></th><th>現在</th><th>最痛</th></tr>
+      <tr><td>痛</td><td><input type="number" min="0" max="10"></td><td><input type="number" min="0" max="10"></td></tr>
+      <tr><td>痠</td><td><input type="number" min="0" max="10"></td><td><input type="number" min="0" max="10"></td></tr>
+      <tr><td>麻</td><td><input type="number" min="0" max="10"></td><td><input type="number" min="0" max="10"></td></tr>
+    </table>
 
-  <p>PDF 與 Excel 匯出功能整合中，敬請期待。</p>
+    <p>嗎啡是否有效：
+      <select>
+        <option>是</option>
+        <option>否</option>
+      </select>
+    </p>
+
+    <p>藥物後痛：<input type="number" min="0" max="10"></p>
+    <p>藥物後痠：<input type="number" min="0" max="10"></p>
+    <p>藥物後麻：<input type="number" min="0" max="10"></p>
+
+    <p>痠多久：
+      <select>
+        <option>數天</option><option>數週</option><option>數月</option><option>數年</option>
+      </select>
+    </p>
+    <p>痛多久：
+      <select>
+        <option>數天</option><option>數週</option><option>數月</option><option>數年</option>
+      </select>
+    </p>
+  </section>
 </body>
 </html>
